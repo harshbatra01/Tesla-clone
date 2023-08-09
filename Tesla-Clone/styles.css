@@ -1,0 +1,188 @@
+
+/* Header Start */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+    
+    body{
+    color: var(--tds-theme-foreground);
+    font-family: sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+header{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 5px 20px;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    width: 100%;
+}
+
+a.logo{
+    color: inherit;
+    height: 15px;
+    width: 100px;
+}
+
+header a{
+    color: inherit;
+}
+
+header nav a{
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+header nav.center{
+    text-align: center;
+    
+}
+
+header nav.right{
+    text-align: right;
+}
+
+.desktop{
+    display: none;
+}
+
+@media(min-width: 768px) {
+    .desktop{
+        display: initial;
+    }
+    
+}
+
+/* Header Close */
+
+section{
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    scroll-snap-type:  mandatory;
+    
+}
+
+section .content{
+    /* opacity: 0;
+    position: fixed; */
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    /* transition: opacity 0.5s ease; */
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+    display: grid;
+    grid-template-rows: min-content min-content auto min-content;
+}
+
+/* section.active .content{
+    opacity: 1;
+} */
+
+
+
+section h1{
+    font-size: 3rem;
+    font-weight: 500;
+    /* padding-bottom: 2vh; */
+}
+
+section a{
+    color: inherit;
+    text-decoration: none;
+
+}
+
+section .buttons a{
+    display: block;
+    background-color: #eee;
+    padding: 12px 50px;
+    color: inherit;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+section .buttons {
+    display: grid;
+    row-gap: 10px;
+    margin: 0 40px;
+}
+
+section .buttons a:first-child{
+    background-color: #444;
+    color: #fff;
+    
+}
+
+@media(min-width: 768px){
+   section .buttons{
+    max-width: 640px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+   }
+}
+
+aside{
+    position: fixed;
+    transition: right 0.4s ease;
+    right: -320px;
+    background-color: #eee;
+    width: 260px;
+    padding: 40px 40px;
+    z-index: 4;
+    height: 100vh;
+}
+
+aside.active{
+    right: 0;
+}
+
+aside a{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 10px;
+}
+
+aside button{
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: sans-serif;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.backdrop{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+}
+
+.backdrop.active{
+    display: block;
+}
+
+
+.a{
+    scroll-snap-align: start;
+}
